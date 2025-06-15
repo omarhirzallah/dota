@@ -715,3 +715,16 @@ color: rgba(102, 102, 104, 1);
     align-items: center;
     justify-content: center;
 }
+.container-of-leaderboard{
+    width: 1550px;
+    height: 100%;
+    background-color: #19CA60;
+    display: flex;
+    justify-content: center;
+}
+.contentt{
+    width: 1302px;
+    background-color: red;
+    height: 94.7%;
+    margin-top: 50px;
+}
