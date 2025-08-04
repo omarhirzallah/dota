@@ -1,0 +1,625 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="browser@4.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bitcount+Grid+Double:wght@100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+        rel="stylesheet">
+    <style>
+        @keyframes typing {
+            0% {
+                width: 0%;
+                visibility: hidden;
+            }
+
+            100% {
+                width: 100%;
+            }
+        }
+
+        @keyframes blink {
+            50% {
+                border-color: transparent;
+            }
+
+            100% {
+                border-color: white;
+            }
+        }
+
+        .animate-typing {
+            animation: typing 2s steps(20) infinite alternate, blink 0.7s step-end infinite;
+        }
+
+        /* From Uiverse.io by Zameerahmad01 */
+        ul {
+            list-style: none;
+        }
+
+        .example-2 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            row-gap: 0.5rem;
+        }
+
+        .example-2 .icon-content {
+            margin: 0 10px;
+            position: relative;
+        }
+
+        .example-2 .icon-content .tooltip {
+            position: absolute;
+            top: 20px;
+            left: 40%;
+            transform: translateX(50%);
+            color: #fff;
+            padding: 6px 10px;
+            border-radius: 5px;
+            opacity: 0;
+            visibility: hidden;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .example-2 .icon-content:hover .tooltip {
+            opacity: 1;
+            visibility: visible;
+            top: 5px;
+        }
+
+        .example-2 .icon-content a {
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            color: #4d4d4d;
+            background-color: #fff;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .example-2 .icon-content a:hover {
+            box-shadow: 3px 2px 45px 0px rgb(0 0 0 / 12%);
+        }
+
+        .example-2 .icon-content a svg {
+            position: relative;
+            z-index: 1;
+            width: 30px;
+            height: 30px;
+        }
+
+        .example-2 .icon-content a:hover {
+            color: white;
+        }
+
+        .example-2 .icon-content a .filled {
+            position: absolute;
+            top: auto;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 0;
+            background-color: #000;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .example-2 .icon-content a:hover .filled {
+            height: 100%;
+        }
+
+        .example-2 .icon-content a[data-social="linkedin"] .filled,
+        .example-2 .icon-content a[data-social="linkedin"]~.tooltip {
+            background-color: #0274b3;
+        }
+
+        .example-2 .icon-content a[data-social="github"] .filled,
+        .example-2 .icon-content a[data-social="github"]~.tooltip {
+            background-color: #24262a;
+        }
+
+        .example-2 .icon-content a[data-social="instagram"] .filled,
+        .example-2 .icon-content a[data-social="instagram"]~.tooltip {
+            background: linear-gradient(45deg,
+                    #405de6,
+                    #5b51db,
+                    #b33ab4,
+                    #c135b4,
+                    #e1306c,
+                    #fd1f1f);
+        }
+
+        .example-2 .icon-content a[data-social="youtube"] .filled,
+        .example-2 .icon-content a[data-social="youtube"]~.tooltip {
+            background-color: #ff0000;
+        }
+        /* From Uiverse.io by Juanes200122 */ 
+.container {
+  position: relative;
+  max-width: 350px;
+  width: 100%;
+  
+  margin: 0 15px;
+  padding: 20px;
+  border: solid 1px white;
+  
+}
+.container:hover{
+    scale: 1.1;
+    transition: 1s;
+    box-shadow: rgba(red, green, blue, alpha);
+}
+
+.container .skill-box {
+  width: 100%;
+  margin: 25px 0;
+}
+
+.skill-box .title {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: rgb(226, 226, 226);
+}
+
+.skill-box .skill-bar {
+  height: 8px;
+  width: 100%;
+  border-radius: 6px;
+  margin-top: 6px;
+  background: rgba(236, 236, 236, 0.1);
+}
+
+.skill-bar .skill-per {
+  position: relative;
+  display: block;
+  height: 100%;
+  width: 90%;
+  border-radius: 6px;
+  background: rgb(226, 226, 226);
+  animation: progress 0.4s ease-in-out forwards;
+  opacity: 0;
+}
+
+.skill-per.html {
+  /*progreso de las diferentes lenguajes*/
+  width: 100%;
+  animation-delay: 0.1s;
+}
+
+.skill-per.scss {
+  /*progreso de las diferentes lenguajes*/
+  width: 100%;
+  animation-delay: 0.1s;
+}
+
+.skill-per.Boostrap {
+  /*progreso de las diferentes lenguajes*/
+  width: 70%;
+  animation-delay: 0.2s;
+}
+
+@keyframes progress {
+  0% {
+    width: 0;
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.skill-per .tooltip {
+  position: absolute;
+  right: -14px;
+  top: -28px;
+  font-size: 9px;
+  font-weight: 500;
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  padding: 2px 6px;
+  border-radius: 3px;
+  background: rgb(226, 226, 226);
+  z-index: 1;
+}
+
+.tooltip::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -2px;
+  height: 10px;
+  width: 10px;
+  z-index: -1;
+  background-color: rgb(226, 226, 226);
+  transform: translateX(-50%) rotate(45deg);
+}
+
+    </style>
+    <link rel="stylesheet" href="homepage.css">
+</head>
+
+<body>
+    <div
+        class="the-whole-container flex flex-col lg:flex-row the-mid-container min-h-screen bg-[#282C33] justify-center font-semibold text-white">
+        <div class="left-header w-full lg:w-auto h-auto lg:h-[4200px] flex flex-col order-2 lg:order-1">
+           
+        </div>
+        <div class="flex flex-col gap-y-8 lg:gap-y-34 w-full max-w-7xl mx-auto order-1 lg:order-2 px-4 lg:px-0">
+
+            <div class="header w-full max-w-[1600px] h-auto lg:h-[61px] flex flex-col lg:flex-row pt-4 lg:pt-7 justify-between items-center gap-4 lg:gap-0">
+                <div class="flex justify-between items-center w-full lg:w-auto">
+                    <div class="left-head flex w-auto lg:w-20 h-full items-center gap-3 lg:gap-5">
+                        <div><img src="img-p/Logo.png" alt="" class="w-8 h-8 lg:w-auto lg:h-auto"></div>
+                        <div class="text-base lg:text-lg font-bold">Omar</div>
+                    </div>
+                    
+                    <!-- Hamburger Menu Button (Mobile Only) -->
+                    <button id="hamburger-btn" class="lg:hidden flex flex-col gap-1 p-2" onclick="toggleMobileMenu()">
+                        <div class="w-6 h-0.5 bg-white transition-all duration-300" id="line1"></div>
+                        <div class="w-6 h-0.5 bg-white transition-all duration-300" id="line2"></div>
+                        <div class="w-6 h-0.5 bg-white transition-all duration-300" id="line3"></div>
+                    </button>
+                </div>
+                
+                <div class="middile hidden lg:block">
+
+                </div>
+                
+                <!-- Mobile Menu (Hidden by default) -->
+                <div id="mobile-menu" class="w-full lg:hidden flex-col items-center gap-4 mt-4 hidden">
+                    <div class="hover:hover: ">
+                        <span class="text-[#C778DD] pr-1">#</span><a href=""
+                            class="cursor-pointer hover:text-[#C778DD] hover:text-lg hover:duration-500 ">Home</a>
+                    </div>
+                    <div class="hover:hover: "><span
+                            class="text-[#C778DD] pr-1">#</span><a href="#projects"
+                            class="cursor-pointer hover:text-[#C778DD] hover:text-lg hover:duration-500">Projects</a></div>
+                    <div class="hover:hover: "><span
+                            class="text-[#C778DD] pr-1">#</span><a href="#about-me"
+                            class="cursor-pointer hover:text-[#C778DD] hover:text-lg hover:duration-500">About-me</a></div>
+                    <div class="hover:hover: "><span
+                            class="text-[#C778DD] pr-1">#</span><a href="#contact-me"
+                            class="cursor-pointer hover:text-[#C778DD] hover:text-lg hover:duration-500">Contact Me</a></div>
+
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="right-head hidden lg:flex w-[443px] h-full justify-between items-center">
+                    <div class="hover:hover: ">
+                        <span class="text-[#C778DD] pr-1">#</span><a href=""
+                            class="cursor-pointer hover:text-[#C778DD] hover:text-lg hover:duration-500 ">Home</a>
+                    </div>
+                    <div class="hover:hover: "><span
+                            class="text-[#C778DD] pr-1">#</span><a href="#projects"
+                            class="cursor-pointer hover:text-[#C778DD] hover:text-lg hover:duration-500">Projects</a></div>
+                    <div class="hover:hover: "><span
+                            class="text-[#C778DD] pr-1">#</span><a href="#about-me"
+                            class="cursor-pointer hover:text-[#C778DD] hover:text-lg hover:duration-500">About-me</a></div>
+                    <div class="hover:hover: "><span
+                            class="text-[#C778DD] pr-1">#</span><a href="#contact-me"
+                            class="cursor-pointer hover:text-[#C778DD] hover:text-lg hover:duration-500">Contact Me</a></div>
+
+                </div>
+            </div>
+            <div class="flex flex-col lg:flex-row"> <!--  under head section -->
+            <!-- Mobile: Image first, centered layout -->
+            <div class="w-full lg:hidden flex flex-col items-center gap-y-6 p-4 text-center">
+                <div class="w-64 h-64 flex justify-center items-center">
+                    <img src="img-p/Group 46.png" alt="Profile" class="w-full h-full object-contain">
+                </div>
+                <div class="w-[280px] h-[30px] border-[2px] border-white flex justify-center items-center gap-x-3">
+                    <div class="w-2 h-2 bg-[#C778DD]"></div>
+                    <div class="text-sm">Currently working on <span class="text-base">Portfolio</span></div>
+                </div>
+                <div class="text-center">
+                    <div class="text-lg mb-2">hello there</div>
+                    <div class="text-2xl text-[#C778DD] font-bold mb-4 animate-typing overflow-hidden whitespace-nowrap border-r-4 border-r-white pr-2">
+                        im a front-end developer</div>
+                </div>
+                <div class="text-center text-base px-4">
+                    I'm Omar Hirzallah — a front-end developer<br />
+                    I'm passionate about building clean, responsive user interfaces.
+                </div>
+                <div class="flex justify-center">
+                    <a href="rr.pdf" download>
+                        <button
+                            class="overflow-hidden relative w-32 p-2 h-12 bg-slate-700 text-white border-none rounded-md text-xl font-bold cursor-pointer relative z-10 group">
+                            GET
+                            <span
+                                class="absolute w-36 h-32 -top-8 -left-2 bg-white rotate-12 transform scale-x-0 group-hover:scale-x-100 transition-transform group-hover:duration-500 duration-1000 origin-left"></span>
+                            <span
+                                class="absolute w-36 h-32 -top-8 -left-2 bg-purple-400 rotate-12 transform scale-x-0 group-hover:scale-x-100 transition-transform group-hover:duration-700 duration-700 origin-left"></span>
+                            <span
+                                class="absolute w-36 h-32 -top-8 -left-2 bg-[#C778DD] rotate-12 transform scale-x-0 group-hover:scale-x-100 transition-transform group-hover:duration-1000 duration-500 origin-left"></span>
+                            <span
+                                class="group-hover:opacity-100 group-hover:duration-1000 duration-100 opacity-0 absolute top-2.5 left-6 z-10">CV !!!</span>
+                        </button>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Desktop: Original layout -->
+            <div class="hidden lg:flex w-full">
+                <div class="w-full h-[500px] flex flex-col gap-y-7"> <!-- left-under-head -->
+                    <div class="flex items-center justify-start p-10">
+                        <div class="w-max">
+                            <div>hello there</div>
+                            <div
+                                class="animate-typing overflow-hidden whitespace-nowrap border-r-4 border-r-white pr-5 text-5xl text-[#C778DD] font-bold">
+                                im a front-end developer</div>
+                        </div>
+                    </div>
+                    <div class="underanimation text-left pl-9 text-lg">
+                        I'm Omar Hirzallah — a front-end developer<br />
+                        I'm passionate about building clean, responsive user interfaces.
+                    </div>
+                    <!-- From Uiverse.io by Javierrocadev -->
+                    <div class="comtact-me-button ml-9">
+                        <a href="rr.pdf" download>
+                            <button
+                                class="overflow-hidden relative w-32 p-2 h-12 bg-slate-700 text-white border-none rounded-md text-xl font-bold cursor-pointer relative z-10 group">
+                                GET
+                                <span
+                                    class="absolute w-36 h-32 -top-8 -left-2 bg-white rotate-12 transform scale-x-0 group-hover:scale-x-100 transition-transform group-hover:duration-500 duration-1000 origin-left"></span>
+                                <span
+                                    class="absolute w-36 h-32 -top-8 -left-2 bg-purple-400 rotate-12 transform scale-x-0 group-hover:scale-x-100 transition-transform group-hover:duration-700 duration-700 origin-left"></span>
+                                <span
+                                    class="absolute w-36 h-32 -top-8 -left-2 bg-[#C778DD] rotate-12 transform scale-x-0 group-hover:scale-x-100 transition-transform group-hover:duration-1000 duration-500 origin-left"></span>
+                                <span
+                                    class="group-hover:opacity-100 group-hover:duration-1000 duration-100 opacity-0 absolute top-2.5 left-6 z-10">CV !!!</span>
+                            </button>
+                        </a>
+                    </div>
+                    <div class="w-full h-full flex justify-end items-end">
+                        
+                    </div>
+                </div>
+                <div class="w-full h-full flex flex-col">
+                    <div class="w-full h-[200%] flex justify-center"><img src="img-p/Group 46.png" alt=""></div><!-- right-up-pic-div -->
+                    <div class="w-full h-full flex justify-center items-end ml-2"> <!-- under-pic -->
+                        <div class="w-[402px] h-[37px] border-[3px] border-white flex justify-center items-center gap-x-4">
+                            <div class="w-3 h-3 bg-[#C778DD]"></div>
+                            <div>Currently working on <span class="text-lg">Portfolio</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+            <div class="w-full h-auto lg:h-[250px] flex justify-center py-8 lg:py-0"><!--  third element conatiner -->
+                <div class="w-full lg:w-[50%] flex justify-center items-center px-4"><!--  second third element conatiner -->
+                    <div class="flex flex-col lg:flex-row justify-center items-center gap-2 lg:gap-2"><!--  border quote -->
+                        <div class="w-[150px] lg:w-[230px] bg-[#C778DD] h-3 rounded-sm"></div>
+                        <div class="text-base lg:text-xl text-center px-2">My code compiles, but my soul doesn't</div>
+                        <div class="w-[150px] lg:w-[230px] bg-[#C778DD] h-3 rounded-sm"></div>
+                    </div>
+                </div>
+            </div>
+            <div id="projects" class="w-full h-auto lg:h-[570px] py-8"><!--  fourth element conatiner -->
+                <div class="w-full h-auto lg:h-30 text-2xl lg:text-[30px] flex flex-col lg:flex-row items-center justify-between gap-4 lg:gap-0 px-4 lg:px-0">
+                    <div class="left-project-up flex items-center gap-4 lg:gap-7">
+                        <div><span class="text-[#c778dd]">#</span>projects</div>
+                        <div class="w-[200px] lg:w-[350px] h-[1px] bg-[#C778DD] mb-[-10px]"></div>
+                    </div>
+                    <div>
+                        <div class="text-sm">View all &#11153;</div>
+                    </div>
+                </div>
+                <div class="flex flex-col lg:flex-row gap-6 lg:gap-0 mt-8 px-4 lg:px-0">
+                    <div class="w-full h-full flex justify-center items-center">
+                        <div class="w-full max-w-[330px] h-[428px] border-[1px] flex flex-col">
+                            <div class="w-full h-[200px] bg-gray-800 flex items-center justify-center"><img src="img-p/-first project.png" alt="TF2 Keys Website" class="w-full h-full object-cover"></div> <!--  TF2 keys website thumbnail -->
+                            <div class="w-full h-[1px] bg-white"></div>
+                            <div class="flex justify-center pt-2">HTML CSS Responsive</div>
+                            <div class="w-full h-[1px] bg-white mt-2"></div>
+                            <div class="pt-2 pl-4 text-lg">TF2 Keys Store</div>
+                            <div class="pt-6 pl-4 text-sm">I made it with HTML CSS responsive design for selling Team Fortress 2 keys</div>
+                            <div class="flex pt-14"></div>
+                        </div>
+                    </div>
+                    <div class="w-full h-full flex justify-center items-center">
+                        <div class="w-full max-w-[330px] h-[428px] border-[1px] flex flex-col">
+                            <div class="w-full h-[200px] bg-gray-800 flex items-center justify-center"><img src="img-p/dota-project.png" alt="Dota Project" class="w-full h-full object-cover"></div> <!--  Dota project thumbnail -->
+                            <div class="w-full h-[1px] bg-white"></div>
+                            <div class="flex justify-center pt-2">Html Css Js</div>
+                            <div class="w-full h-[1px] bg-white mt-2"></div>
+                            <div class="pt-2 pl-4 text-lg">Dota Project</div>
+                            <div class="pt-6 pl-4 text-sm">Gaming website project</div>
+                            <div class="flex pt-14"></div>
+                        </div>
+                    </div>
+                    <div class="w-full h-full flex justify-center items-center">
+                        <div class="w-full max-w-[330px] h-[428px] border-[1px] flex flex-col">
+                            <div class="w-full h-[200px] bg-gray-800 flex items-center justify-center"><img src="img-p/volt project.png" alt="Volt Project" class="w-full h-full object-cover"></div> <!--  Volt project thumbnail -->
+                            <div class="w-full h-[1px] bg-white"></div>
+                            <div class="flex justify-center pt-2">Html Css Js</div>
+                            <div class="w-full h-[1px] bg-white mt-2"></div>
+                            <div class="pt-2 pl-4 text-lg">Volt Project</div>
+                            <div class="pt-6 pl-4 text-sm">Electric theme project</div>
+                            <div class="flex pt-14"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="w-full h-auto lg:h-[570px] flex flex-col lg:flex-row py-8"><!--  fifth element conatiner -->
+                <div class="w-full lg:w-[1000px] h-full flex flex-col px-4 lg:px-0">
+                    <div class="w-full h-auto lg:h-20 flex mb-8">
+                         <div class="left-project-up flex items-center gap-4 lg:gap-7">
+                    <div class="text-2xl lg:text-[30px]"><span class="text-[#c778dd] text-2xl lg:text-[30px]">#</span>Skills</div>
+                    <div class="w-[200px] lg:w-[350px] h-[1px] bg-[#C778DD] mb-[-10px]"></div>
+                        </div>
+                    </div>
+                    <div class="flex justify-center items-center pt-8 lg:pt-30"><img src="img-p/Group 36.png" alt="" class="max-w-full h-auto"></div>
+                </div>
+                <div class="w-full h-full flex justify-center items-center px-4 lg:px-0">
+                    
+<div class="container">
+  <div class="skill-box">
+    <span class="title">HTML</span>
+
+    <div class="skill-bar">
+      <span class="skill-per html">
+        <span class="tooltip">100%</span>
+      </span>
+    </div>
+  </div>
+
+  <div class="skill-box">
+    <span class="title">CSS</span>
+
+    <div class="skill-bar">
+      <span class="skill-per scss">
+        <span class="tooltip">100%</span>
+      </span>
+    </div>
+  </div>
+  <div class="skill-box">
+    <span class="title">Tailwind</span>
+
+    <div class="skill-bar">
+      <span class="skill-per Boostrap">
+        <span class="tooltip">70%</span>
+      </span>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="skill-box">
+    <span class="title">JavaScript</span>
+
+    <div class="skill-bar">
+      <span class="skill-per html">
+        <span class="tooltip">100%</span>
+      </span>
+    </div>
+  </div>
+
+  <div class="skill-box">
+    <span class="title">Problem Solving</span>
+
+    <div class="skill-bar">
+      <span class="skill-per Boostrap">
+        <span class="tooltip">70%</span>
+      </span>
+    </div>
+  </div>
+  <div class="skill-box">
+    <span class="title">UI/UX</span>
+
+    <div class="skill-bar">
+      <span class="skill-per scss">
+        <span class="tooltip">90%</span>
+      </span>
+    </div>
+  </div>
+</div>
+
+                </div>
+            </div>
+            <div id="about-me" class="w-full py-8"><!--  sixith element conatiner -->
+                 <div class="w-full max-w-[1000px] mx-auto h-full flex flex-col px-4 lg:px-0">
+                    <div class="w-full h-auto lg:h-20 flex mb-8">
+                         <div class="left-project-up flex items-center gap-4 lg:gap-7">
+                    <div class="text-2xl lg:text-[30px]"><span class="text-[#c778dd] text-2xl lg:text-[30px]">#</span>About-me</div>
+                    <div class="w-[200px] lg:w-[350px] h-[1px] bg-[#C778DD] mb-[-10px]"></div>
+                        </div>
+                    </div>
+                    <div class="flex justify-center items-center pt-8 lg:pt-30 text-center lg:text-left text-base lg:text-lg leading-7 lg:leading-10">
+                        Hello, I'm Omar! I'm a self-taught front-end developer currently learning and growing in the world of web development. I've built a strong foundation in HTML, CSS, and a bit of JavaScript, and recently started using Tailwind CSS to bring ideas to life more efficiently. I enjoy turning simple ideas into responsive, modern designs. Every project I create helps me become more confident in both design and code. Right now, I'm focused on practicing front-end skills, exploring UI/UX principles, and learning how to build real-world websites. I believe in continuous learning, and I'm excited to build better, cleaner, and more interactive user experiences every day.
+                    </div>
+                </div>
+                
+            </div>
+              <div id="contact-me" class="w-full py-8"><!--  sevenith element conatiner -->
+                 <div class="w-full max-w-[1000px] mx-auto h-full flex flex-col px-4 lg:px-0">
+                    <div class="w-full h-auto lg:h-20 flex mb-8">
+                         <div class="left-project-up flex items-center gap-4 lg:gap-7">
+                    <div class="text-2xl lg:text-[30px]"><span class="text-[#c778dd] text-2xl lg:text-[30px]">#</span>contact me</div>
+                    <div class="w-[200px] lg:w-[350px] h-[1px] bg-[#C778DD] mb-[-10px]"></div>
+                        </div>
+                    </div>
+                  <div class="text-base lg:text-[20px] pt-8 lg:pt-24 text-center lg:text-left">I'm interested in freelance opportunities. However, if you have any other requests or questions, don't hesitate to contact me:</div>
+                  <div class="pt-8 text-base lg:text-[18px] space-y-4 flex flex-col items-center lg:items-start">
+                    <div class="flex items-center gap-3">
+                      <span class="text-2xl">📧</span>
+                      <a href="mailto:hirzomar@gmail.com" class="text-[#C778DD] hover:underline">hirzomar@gmail.com</a>
+                    </div>
+                    <div class="flex items-center gap-3">
+                      <span class="text-2xl">💼</span>
+                      <a href="https://linkedin.com/in/omar-dev" target="_blank" class="text-[#C778DD] hover:underline">linkedin.com/in/omar-dev</a>
+                    </div>
+                    <div class="flex items-center gap-3">
+                      <span class="text-2xl">📁</span>
+                      <a href="rr.pdf" download class="text-[#C778DD] hover:underline">Download My CV</a>
+                    </div>
+                  </div>
+                </div>
+                
+            </div>
+        </div>
+       
+    </div>
+</body>
+
+<script>
+function toggleMobileMenu() {
+    const mobileMenu = document.getElementById('mobile-menu');
+    const line1 = document.getElementById('line1');
+    const line2 = document.getElementById('line2');
+    const line3 = document.getElementById('line3');
+    
+    // Toggle menu visibility
+    if (mobileMenu.classList.contains('hidden')) {
+        mobileMenu.classList.remove('hidden');
+        mobileMenu.classList.add('flex');
+        
+        // Animate hamburger to X
+        line1.style.transform = 'rotate(45deg) translate(5px, 5px)';
+        line2.style.opacity = '0';
+        line3.style.transform = 'rotate(-45deg) translate(7px, -6px)';
+    } else {
+        mobileMenu.classList.add('hidden');
+        mobileMenu.classList.remove('flex');
+        
+        // Animate X back to hamburger
+        line1.style.transform = 'rotate(0) translate(0, 0)';
+        line2.style.opacity = '1';
+        line3.style.transform = 'rotate(0) translate(0, 0)';
+    }
+}
+
+// Close mobile menu when clicking on a link
+document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenuLinks = document.querySelectorAll('#mobile-menu a');
+    mobileMenuLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            const line1 = document.getElementById('line1');
+            const line2 = document.getElementById('line2');
+            const line3 = document.getElementById('line3');
+            
+            // Close menu
+            mobileMenu.classList.add('hidden');
+            mobileMenu.classList.remove('flex');
+            
+            // Reset hamburger icon
+            line1.style.transform = 'rotate(0) translate(0, 0)';
+            line2.style.opacity = '1';
+            line3.style.transform = 'rotate(0) translate(0, 0)';
+        });
+    });
+});
+</script>
+
+</html>
